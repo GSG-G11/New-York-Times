@@ -5,6 +5,17 @@ const newsApi = `https://api.newscatcherapi.com
 
 //DOM
 const heroSection = document.querySelector(".hero-section");
+const globalStats = document.querySelector("#global-stats");
+
+// Cards Info
+const covidCards = document.querySelector(".covid-cards");
+const card = document.querySelector(".card");
+const cardContainer = document.querySelector(".card-container");
+const cardTitle = document.querySelector("#title");
+const cardConfirmed = document.querySelector("#confirmed");
+const cardDeaths = document.querySelector("#deaths");
+const cardLife = document.querySelector("#life");
+const cardLocation = document.querySelector("#location");
 
 // render hero
 const renderHero = (news) => {
@@ -56,7 +67,7 @@ window.addEventListener("load", (e) => {
             console.log(response);
             console.log(status);
         } else {
-            console.log(response);
+            // console.log(response);
             renderHero(response.articles[0]);
         }
         for (let i = 1; i < 6; i++) {
@@ -70,67 +81,34 @@ window.addEventListener("load", (e) => {
             console.log(status);
         } else {
             // console.log(response);
-            casesCount(data.response); //Get Count of cases Statistics section
-            renderTable(data.response);
-            console.log(getTopCases(data.response));
+            globalCount(data.response); //Get Count of cases Statistics section
+            getTopCases(data.response);
 
             // renderHero(response.articles[0]);
         }
     });
 });
 
+globalCount = (data, cb) => {
+    let global = getTopCases(data);
+    const text = document.createTextNode(
+        `There's ${global[0].confirmed} confirmed cases of Coronavirus around the world today.`
+    );
+    return globalStats.appendChild(text);
+};
+
+// Count all confirmed cases of covid globally
 const getTopCases = (data) => {
     let sorted = [];
     Object.entries(data).forEach((entry) => {
         sorted.push(entry[1].All);
         sorted = sorted.sort((a, b) => b.confirmed - a.confirmed).slice(0, 6); // Get six sorted items
     });
-    return sorted;
-};
-
-const casesCount = (data) => {
-    return Object.entries(data).forEach((entry) => {
-        console.log(entry);
+    sorted.forEach((element) => {
+        cardTitle.innerHtml = element.country;
+        cardConfirmed.innerHtml = element.confirmed;
+        cardDeaths.innerHTML = element.deaths;
+        cardLife.innerHTML = element.life_expectancy;
+        cardLocation.innerHTML = element.location;
     });
 };
-
-const renderTable = (data) => {
-    const tbody = document
-        .getElementById("covid-table")
-        .getElementsByTagName("tbody")[0];
-    let count = 1;
-    Object.entries(data).forEach((entry) => {
-        // entry[0] for country name
-        // entry[1] for rest of data
-        const newRow = tbody.insertRow();
-        const idCell = newRow.insertCell();
-        const id = document.createTextNode("" + count++);
-        idCell.appendChild(id);
-
-        const countryCell = newRow.insertCell();
-        const country = document.createTextNode(entry[1].All.country);
-        countryCell.appendChild(country);
-
-        const totalCell = newRow.insertCell();
-        const total = document.createTextNode(entry[1].All.confirmed);
-        totalCell.appendChild(total);
-
-        const deathCell = newRow.insertCell();
-        const death = document.createTextNode(entry[1].All.deaths);
-        deathCell.appendChild(death);
-
-        const populationCell = newRow.insertCell();
-        const population = document.createTextNode(entry[1].All.population);
-        populationCell.appendChild(population);
-
-        const lifeCell = newRow.insertCell();
-        const life = document.createTextNode(entry[1].All.life_expectancy);
-        lifeCell.appendChild(life);
-
-        const locationCell = newRow.insertCell();
-        const location = document.createTextNode(entry[1].All.location);
-        locationCell.appendChild(location);
-    });
-};
-
-renderTable();
