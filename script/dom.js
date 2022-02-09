@@ -1,6 +1,11 @@
+//api
+const apiNewsKey = "df5193cbe8e54b53a2bbd9faad5a8c9a";
+const newsApi = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiNewsKey}`;
+
 //DOM
 const heroSection = document.querySelector(".hero-section");
 
+// render hero
 const renderHero = (news) => {
   const newsTitleSection = document.createElement("div");
   newsTitleSection.classList.add("news-title-section");
@@ -24,12 +29,24 @@ linear-gradient(
   heroSection.appendChild(newsTitleSection);
 };
 
-const renderNewsCard = (news) => {};
+// to render news card
+const renderNewsCard = (news) => {
+  const newsCard = document.createElement("div");
+  newsCard.classList.add("news-card");
+  latsetNews.appendChild(newsCard);
+  const newsDiscription = document.createElement("p");
+  newsDiscription.classList.add("news-discription");
+  newsDiscription.innerText = news.title;
+  newsCard.appendChild(newsDiscription);
+  const readMore = document.createElement("a");
+  readMore.classList.add("read-more-card-section");
+  readMore.innerText = "Read More";
+  readMore.href = news.url;
+  readMore.target = "_blank";
+  newsCard.appendChild(readMore);
+};
 
-const apiNewsKey = "df5193cbe8e54b53a2bbd9faad5a8c9a";
 window.addEventListener("load", (e) => {
-  const newsApi = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiNewsKey}`;
-
   fetch(newsApi, (data) => {
     const { error, status, response } = data;
     if (error) {
@@ -38,6 +55,9 @@ window.addEventListener("load", (e) => {
     } else {
       console.log(response);
       renderHero(response.articles[0]);
+    }
+    for (let i = 1; i < 6; i++) {
+      renderNewsCard(response.articles[i]);
     }
   });
 });
