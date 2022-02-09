@@ -8,8 +8,7 @@
     <title>New York Times</title>
     <link rel="stylesheet" href="./style.css">
     <!-- google font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Mea+Culpa&family=Palanquin+Dark:wght@400;500;600&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&family=Rowdies:wght@300&family=Sarabun:wght@100;200&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Mea+Culpa&family=Palanquin+Dark:wght@400;500;600&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&family=Rowdies:wght@300&family=Sarabun:wght@100;200&display=swap"
         rel="stylesheet">
 </head>
 
@@ -66,38 +65,30 @@
             </p> -->
         </div>
     </section>
-
-
-    <!-- /**************** Table ********************/ -->
-    <div class="input-search">
-        <p>Search:</p>
-        <!-- <input type="text" class="light-table-filter" data-table="order-table" placeholder="Filter"> -->
-    </div>
-    <input type="search" id="search-input" onkeyup="getSearchInput()" data-table="order-table" placeholder="Filter">
-    <table class="order-table table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Country</th>
-                <th>Totol cases</th>
-                <th>Deaths</th>
-                <th>Population</th>
-                <th>Life expectincy</th>
-                <th>Location</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Palestine Penyworth</td>
-                <td>alfred@batman.com</td>
-                <td>6754328901</td>
-                <td>199</td>
-                <td>john.doe@gmail.com</td>
-                <td>0123456789</td>
-                <td>Southern and Central Asia</td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- Stats -->
+    <section class="stats">
+        <h1 id="stats-title">COVID Statistics</h1>
+        <div class="stats-container">
+            <div class="map">
+                <div class="stats-cases">
+                    <h2 id="global-stats"></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Covid Cards -->
+    <section class="covid-cards">
+        <div class="card">
+            <div class="card-container">
+                <h2 id="title">
+                    </h4>
+                    <h4 id="confirmed"></h4>
+                    <h4 id="deaths"></h4>
+                    <h4 id="life"> </h4>
+                    <h4 id="location"></h4>
+            </div>
+        </div>
+    </section>
     <!-- footer section  -->
     <footer class="footer">
         <p class="copy-rights">2022-NewYotk-Times</p>
