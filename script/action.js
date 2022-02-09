@@ -18,5 +18,9 @@ const fetch = (link, cb) => {
     }
   };
   xhr.open("GET", link);
+  xhr.setRequestHeader(
+    "x-api-key",
+    "KINWCqfOXaOflRlqwmizbOpaMIo85MFYp_CpbJAg144"
+  );
   xhr.send();
 };

@@ -1,6 +1,7 @@
 //api
-const apiNewsKey = "df5193cbe8e54b53a2bbd9faad5a8c9a";
-const newsApi = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiNewsKey}`;
+const apiNewsKey = "KINWCqfOXaOflRlqwmizbOpaMIo85MFYp_CpbJAg144";
+const newsApi = `https://api.newscatcherapi.com
+/v2/latest_headlines?countries=AE&topic=business&page_size=10`;
 
 //DOM
 const heroSection = document.querySelector(".hero-section");
@@ -15,7 +16,7 @@ const renderHero = (news) => {
   const readMore = document.createElement("a");
   readMore.classList.add("read-more");
   readMore.innerText = "Read More";
-  readMore.href = news.url;
+  readMore.href = news.link;
   readMore.target = "_blank";
   newsTitleSection.appendChild(newsTitle);
   newsTitleSection.appendChild(readMore);
@@ -25,7 +26,7 @@ linear-gradient(
     rgba(245, 246, 252, 0.52),
     rgb(12 11 12 / 73%)
   ),
-  url("${news.urlToImage}")`;
+  url("${news.media}")`;
   heroSection.appendChild(newsTitleSection);
 };
 
@@ -41,7 +42,7 @@ const renderNewsCard = (news) => {
   const readMore = document.createElement("a");
   readMore.classList.add("read-more-card-section");
   readMore.innerText = "Read More";
-  readMore.href = news.url;
+  readMore.href = news.link;
   readMore.target = "_blank";
   newsCard.appendChild(readMore);
 };
