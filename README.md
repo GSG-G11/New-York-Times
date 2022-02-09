@@ -18,7 +18,7 @@ COVID data and UEA news are available through this news app.
 
 ## User journey
 
-The website consists of a single page with a navbar that leads to the news section and COVID data. The news section contains the most recent five news stories from the United Arab Emirates. The COVID statistics area gives you information on the overall number of affected persons throughout the world, as well as the opportunity to search for COVID data for any country.
+The website consists of a single page with a navbar that leads to the news section and COVID data. The news section contains the most recent five news stories from the United Arab Emirates. The COVID statistics area gives you information on the overall number of affected persons throughout the world , and to see the top five countreis that have the hieghest affected persons.
 
 ## User Stories
 
@@ -28,7 +28,7 @@ The website consists of a single page with a navbar that leads to the news secti
 - I want to see the latest news in UEA .
 - I want see the latest 5 news in UEA.
 - I want see the COVID statistics section wich shows the overall number of affected persons throughout the world.
-- I want to be able to search for COVID data for any country.
+- I want see the top 5 countries that have the hieghest affected persons .
 
 ## clone-it
 
