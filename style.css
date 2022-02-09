@@ -46,6 +46,7 @@
     display: flex;
     justify-content: center;
 }
+<<<<<<< HEAD
 
 .map img {
     object-fit: cover;
@@ -90,3 +91,38 @@ td {
 tbody tr:nth-child(odd) {
     background: #eee;
 }
+=======
+.hero-section {
+  min-height: 500px;
+  background-image: linear-gradient(
+    to right,
+    rgba(245, 246, 252, 0.52),
+    rgb(12 11 12 / 73%)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 100px;
+}
+.news-title-section {
+  width: 400px;
+  border-radius: 25px;
+  background-color: rgba(32, 30, 30, 0.6);
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 35px;
+  flex-direction: column;
+  gap: 20px;
+}
+.news-title {
+  color: white;
+  font-size: 20px;
+}
+.read-more {
+  color: white;
+  align-self: flex-end;
+  font-size: 15px;
+  cursor: pointer;
+}
+>>>>>>> 54f09fd2767d9e71eddbe19a3c5d2a62423dba9c
