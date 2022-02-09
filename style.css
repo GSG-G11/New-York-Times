@@ -1,31 +1,92 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
 .header-section {
-  height: 60px;
-  background: #c4c4c447;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
+    height: 60px;
+    background: #c4c4c447;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
 }
+
 .tilte-name {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 .header-navbar {
-  padding: 40px;
-  display: flex;
-  gap: 20px;
+    padding: 40px;
+    display: flex;
+    gap: 20px;
 }
+
 .nav-element {
-  color: black;
-  font-size: 20px;
-  text-decoration: none;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+/**************** Covid Stats Style ********************/
+
+
+/* .header-section {
+    display: flex;
+    align-self: center;
+}
+
+.map {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.map img {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+    image-rendering: pixelated;
+}
+
+.stats-cases {
+    background-color: #C4C4C4;
+} */
+
+
+/**************** Table ********************/
+
+.input-search {
+    display: flex;
+    align-items: center;
+}
+
+.input-search input {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px;
+    margin: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 0.25rem;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+tbody tr:nth-child(odd) {
+    background: #eee;
 }

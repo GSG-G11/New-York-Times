@@ -8,8 +8,7 @@
     <title>New York Times</title>
     <link rel="stylesheet" href="./style.css">
     <!-- google font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Mea+Culpa&family=Palanquin+Dark:wght@400;500;600&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&family=Rowdies:wght@300&family=Sarabun:wght@100;200&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800&family=Mea+Culpa&family=Palanquin+Dark:wght@400;500;600&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&family=Rowdies:wght@300&family=Sarabun:wght@100;200&display=swap"
         rel="stylesheet">
 </head>
 
@@ -25,6 +24,88 @@
         </nav>
 
     </header>
+
+
+    <!-- <section class="stats">
+        <h1>COVID Statistics</h1>
+        <div class="map">
+            <img src="assets/world-map.png" alt="stats-map">
+            <div class="stats-cases">
+                <h2>There's ${397,260,099} confirmed cases of Coronavirus around the world today.</h2>
+            </div>
+        </div>
+    </section> -->
+
+
+
+    <!-- /**************** Table ********************/ -->
+    <div class="input-search">
+        <p>Search:</p>
+        <!-- <input type="text" class="light-table-filter" data-table="order-table" placeholder="Filter"> -->
+    </div>
+
+
+    <h2>Light Javascript Table Filter</h2>
+
+    <input type="search" id="search-input" onkeyup="getSearchInput()" data-table="order-table" placeholder="Filter">
+
+    <table class="order-table table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Country</th>
+                <th>Totol cases</th>
+                <th>Deaths</th>
+                <th>Population</th>
+                <th>Life expectincy</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Palestine Doe</td>
+                <td>john.doe@gmail.com</td>
+                <td>0123456789</td>
+                <td>99</td>
+                <td>john.doe@gmail.com</td>
+                <td>0123456789</td>
+                <td>Southern and Central Asia
+                </td>
+            </tr>
+            <tr>
+                <td>Isreal Vanda</td>
+                <td>jane@vanda.org</td>
+                <td>9876543210</td>
+                <td>349</td>
+                <td>john.doe@gmail.com</td>
+                <td>0123456789</td>
+                <td>Southern and Central Asia
+                </td>
+            </tr>
+            <tr>
+                <td>Italy Penyworth</td>
+                <td>alfred@batman.com</td>
+                <td>6754328901</td>
+                <td>199</td>
+                <td>john.doe@gmail.com</td>
+                <td>0123456789</td>
+                <td>Southern and Central Asia
+                </td>
+            </tr>
+            <tr>
+                <td>Palestine Penyworth</td>
+                <td>alfred@batman.com</td>
+                <td>6754328901</td>
+                <td>199</td>
+                <td>john.doe@gmail.com</td>
+                <td>0123456789</td>
+                <td>Southern and Central Asia
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
+<script src="script/logic.js"></script>
 
 </html>
