@@ -3,7 +3,7 @@ const tr = document.getElementsByTagName("tr");
 function tableSearch(filter) {
     let td, txtValue;
     for (let i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1]; // Search in column 0
+        td = tr[i].getElementsByTagName("td")[0]; // Search first row
         if (td) {
             txtValue = td.textContent || td.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -22,3 +22,8 @@ function getSearchInput() {
     const filter = input.value.toUpperCase();
     return search(filter);
 }
+
+// to scroll smoothly
+const scrollToElement = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+};

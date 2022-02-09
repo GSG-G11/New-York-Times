@@ -1,6 +1,12 @@
+//api
+const apiNewsKey = "KINWCqfOXaOflRlqwmizbOpaMIo85MFYp_CpbJAg144";
+const newsApi = `https://api.newscatcherapi.com
+/v2/latest_headlines?countries=AE&topic=business&page_size=10`;
+
 //DOM
 const heroSection = document.querySelector(".hero-section");
 
+// render hero
 const renderHero = (news) => {
     const newsTitleSection = document.createElement("div");
     newsTitleSection.classList.add("news-title-section");
@@ -10,7 +16,7 @@ const renderHero = (news) => {
     const readMore = document.createElement("a");
     readMore.classList.add("read-more");
     readMore.innerText = "Read More";
-    readMore.href = news.url;
+    readMore.href = news.link;
     readMore.target = "_blank";
     newsTitleSection.appendChild(newsTitle);
     newsTitleSection.appendChild(readMore);
@@ -20,15 +26,28 @@ linear-gradient(
     rgba(245, 246, 252, 0.52),
     rgb(12 11 12 / 73%)
   ),
-  url("${news.urlToImage}")`;
+  url("${news.media}")`;
     heroSection.appendChild(newsTitleSection);
 };
 
-const renderNewsCard = (news) => {};
+// to render news card
+const renderNewsCard = (news) => {
+    const newsCard = document.createElement("div");
+    newsCard.classList.add("news-card");
+    latsetNews.appendChild(newsCard);
+    const newsDiscription = document.createElement("p");
+    newsDiscription.classList.add("news-discription");
+    newsDiscription.innerText = news.title;
+    newsCard.appendChild(newsDiscription);
+    const readMore = document.createElement("a");
+    readMore.classList.add("read-more-card-section");
+    readMore.innerText = "Read More";
+    readMore.href = news.link;
+    readMore.target = "_blank";
+    newsCard.appendChild(readMore);
+};
 
-const apiNewsKey = "df5193cbe8e54b53a2bbd9faad5a8c9a";
 window.addEventListener("load", (e) => {
-    const newsApi = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiNewsKey}`;
     const casesApi = "https://covid-api.mmediagroup.fr/v1/cases";
 
     fetch(newsApi, (data) => {
@@ -37,11 +56,13 @@ window.addEventListener("load", (e) => {
             console.log(response);
             console.log(status);
         } else {
-            // console.log(response);
+            console.log(response);
             renderHero(response.articles[0]);
         }
+        for (let i = 1; i < 6; i++) {
+            renderNewsCard(response.articles[i]);
+        }
     });
-
     fetch(casesApi, (data) => {
         const { error, status, response } = data;
         if (error) {
