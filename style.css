@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 .header-section {
@@ -178,3 +178,51 @@ tbody tr:nth-child(odd) {
   gap: 10px;
   font-size: 13px;
 }
+
+@media (max-width: 600px) {
+  .nav-element {
+    font-size: 10px;
+  }
+  .tilte-name {
+    font-size: 15px;
+  }
+  .header-section {
+    padding: 9px;
+  }
+  .header-navbar {
+    padding: 10px;
+  }
+  .hero-section {
+    padding: 0;
+    min-height: 300px;
+    padding-top: 20px;
+  }
+  .news-title-section {
+    margin: 0 auto;
+    width: 90%;
+    gap: 0;
+    padding: 22px;
+  }
+  .news-title {
+    line-height: 1;
+  }
+  .latset-news {
+    width: 90%;
+  }
+  .footer {
+    font-size: 9px;
+  }
+  .footer-content {
+    font-size: 9px;
+  }
+  .table-section {
+    overflow: scroll;
+    width: 100%;
+  }
+}
+
+@media (max-width: 820px) {
+  .latset-news {
+    width: 90%;
+  }
+} ;
