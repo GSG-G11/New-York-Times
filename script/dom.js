@@ -89,32 +89,25 @@ window.addEventListener("load", (e) => {
   });
 });
 
-globalCount = (data, cb) => {
-  let global = getTopCases(data);
-  const text = document.createTextNode(
-    `There's ${global[0].confirmed} confirmed cases of Coronavirus around the world today.`
-  );
-  return globalStats.appendChild(text);
-};
-
 // Count all confirmed cases of covid globally
 const getTopCases = (data) => {
   let sorted = [];
   Object.entries(data).forEach((entry) => {
     sorted.push(entry[1].All);
-    sorted = sorted.sort((a, b) => b.confirmed - a.confirmed).slice(0, 6); // Get six sorted items
+    sortedTop = sorted.sort((a, b) => b.confirmed - a.confirmed).slice(1, 6); // Get six sorted items
   });
-  sorted.forEach((element) => {
+  sortedTop.forEach((element) => {
     const cardDiv = document.createElement("div");
     covidCards.appendChild(cardDiv);
+    const title = document.createElement("h1");
+    title.textContent = `${element.country}`;
+    cardDiv.appendChild(title);
     const confirmedText = document.createElement("p");
     confirmedText.textContent = `confirmed : ${element.confirmed}`;
     cardDiv.appendChild(confirmedText);
-
     const deathsText = document.createElement("p");
     deathsText.textContent = `Deaths : ${element.deaths}`;
     cardDiv.appendChild(deathsText);
-
     const lifeText = document.createElement("p");
     lifeText.textContent = `Life expectany : ${element.life_expectancy}`;
     cardDiv.appendChild(lifeText);
@@ -123,4 +116,14 @@ const getTopCases = (data) => {
     cardDiv.appendChild(locationText);
     cardDiv.classList.add("card");
   });
+};
+
+const globalCount = (data) => {
+  let sorted = [];
+  Object.entries(data).forEach((entry) => {
+    sorted.push(entry[1].All.confirmed);
+    sorted = sorted.sort((a, b) => b - a).slice(0, 1); // Get six sorted items
+  });
+  const text = document.querySelector("#global-stats");
+  text.textContent = `There's ${sorted[0]} confirmed cases of Coronavirus around the world today.`;
 };
